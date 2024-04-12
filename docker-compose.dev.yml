@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+  mariadb:
+    image: mariadb:11
+    container_name: zaychik-server-db
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "3306:3306"
+    volumes:
+      - type: bind
+        source: ./data/db
+        target: /var/lib/mysql
+
+  grafana:
+    image: grafana/grafana-oss:10.1.5
+    container_name: zaychik-server-grafana
+    restart: unless-stopped
+    ports:
+      - "80:3000"
+    volumes:
+      - type: bind
+        source: ./data/grafana/var-lib-grafana
+        target: /var/lib/grafana
+      - type: bind
+        source: ./data/grafana/usr-share-grafana/conf
+        target: /usr/share/grafana/conf
