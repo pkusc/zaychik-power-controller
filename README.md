@@ -38,3 +38,7 @@ Zaychik Server is a web server written in TypeScript+Nest.js (backend) and TypeS
 
 A very simple program that runs the target program and ensures everything is under control. We will release an example for it, but writing one yourself is very easy. Simply run the program and send commands to the server while it is running.
 
+## TODO
+
+- [ ] Update the power consumption API for common use cases. We currently monitor power using an OCR tool (not yet open-sourced), but it is not suitable for daily usage.
+- [ ] Add example code for App Runner 
